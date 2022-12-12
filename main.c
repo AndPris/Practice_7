@@ -88,7 +88,7 @@ float root1(float (*func) (float, float), float low, float top, float t, float e
         }
     } while(fabs(top - low) > e);
 
-    if(fabs((*func)(x, t)) > e) {
+    if(fabs((*func)(x, t)) > 1) {
         printf("There is no roots in this range");
         return 0;
     }
@@ -109,7 +109,7 @@ float root2(float (*func) (float, float), float top, float t, float e) {
         x -= delta;
     } while(fabs(delta) > e);
 
-    if(fabs((*func)(x, t)) > e) {
+    if(fabs((*func)(x, t)) > 1) {
         printf("There is no roots in this range");
         return 0;
     }
