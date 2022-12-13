@@ -100,7 +100,7 @@ float root2(float (*func) (float, float), float top, float t, float e) {
 
     do {
         b = (*func)(x, t);
-        der = ( (*func)(x + e, t) - b) / e; // derivative
+        der = ( (*func)(x + pow(10, -6), t) - b) / pow(10, -6); // derivative
         if(isnan(b) || isnan(der)) {
             printf("Value doesn't belong to the domain of function");
             return 0;
